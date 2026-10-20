@@ -57,6 +57,22 @@ Website ini **Mobile-First** dan telah dioptimalkan untuk:
 
 ## 🚀 Cara Deploy ke Vercel
 
+### **Metode 1: Drag & Drop (PALING MUDAH!)** ⭐ Recommended
+
+1. **Double-klik:** `PERSIAPAN-DEPLOY.bat` untuk checklist
+2. **Buka:** https://vercel.com dan Sign Up
+3. **Klik:** "Add New..." → "Project"
+4. **Drag:** folder `sosialisasi pilkades` ke area upload
+5. **Klik:** "Deploy"
+6. **Tunggu 1-2 menit** → Website LIVE! 🎉
+
+📖 **Baca panduan lengkap:** `CARA-DEPLOY-VERCEL.md`  
+📄 **Quick start:** `DEPLOY-QUICK-START.txt`
+
+---
+
+## 🚀 Cara Deploy ke Vercel (Detail)
+
 ### Metode 1: Via Vercel CLI
 
 1. Install Vercel CLI (jika belum):

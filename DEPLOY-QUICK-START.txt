@@ -1,0 +1,238 @@
+═══════════════════════════════════════════════════════════════
+  🚀 QUICK START: DEPLOY KE VERCEL DALAM 5 MENIT
+═══════════════════════════════════════════════════════════════
+
+📌 METODE TERCEPAT: DRAG & DROP
+
+┌─────────────────────────────────────────────────────────────┐
+│  STEP 1: PERSIAPAN                                          │
+└─────────────────────────────────────────────────────────────┘
+
+✅ Double-klik: PERSIAPAN-DEPLOY.bat
+   (Akan auto-check semua yang perlu disiapkan)
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  STEP 2: BUKA VERCEL                                        │
+└─────────────────────────────────────────────────────────────┘
+
+1. Buka browser (Chrome/Firefox/Edge)
+2. Ketik: vercel.com
+3. Klik "Sign Up" (pojok kanan atas)
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  STEP 3: BUAT AKUN                                          │
+└─────────────────────────────────────────────────────────────┘
+
+Pilih salah satu:
+• Continue with GitHub (Recommended)
+• Continue with GitLab
+• Continue with Email
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  STEP 4: DEPLOY                                             │
+└─────────────────────────────────────────────────────────────┘
+
+1. Setelah login, klik "Add New..." → "Project"
+
+2. Scroll ke bawah, cari tulisan:
+   "Or, deploy a Template or a new project without Git"
+
+3. Anda akan lihat kotak besar:
+   
+   ┌────────────────────────────────────┐
+   │                                    │
+   │   📁 Drop your project folder      │
+   │         here to deploy             │
+   │                                    │
+   │       or click to browse           │
+   │                                    │
+   └────────────────────────────────────┘
+
+4. DRAG folder "sosialisasi pilkades" ke kotak ini
+
+   ATAU
+
+   Klik kotak → Pilih folder "sosialisasi pilkades"
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  STEP 5: KONFIGURASI (OPSIONAL)                            │
+└─────────────────────────────────────────────────────────────┘
+
+Setelah upload, Anda lihat form:
+
+• Project Name: pilkades-sukamaju-2026 (bisa diganti)
+• Framework Preset: Other (biarkan)
+• Root Directory: ./ (biarkan)
+
+Klik tombol besar: "DEPLOY"
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  STEP 6: TUNGGU                                             │
+└─────────────────────────────────────────────────────────────┘
+
+Vercel akan proses deployment:
+
+• Building... (30 detik)
+• Deploying... (30 detik)
+• Success! 🎉
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  STEP 7: SELESAI! 🎉                                        │
+└─────────────────────────────────────────────────────────────┘
+
+Website SUDAH LIVE!
+
+URL: https://pilkades-sukamaju-2026.vercel.app
+     (URL akan berbeda tergantung project name Anda)
+
+Klik link untuk membuka website!
+
+
+═══════════════════════════════════════════════════════════════
+  ✅ CHECKLIST SETELAH DEPLOY
+═══════════════════════════════════════════════════════════════
+
+□ Buka URL website
+□ Test di HP (smartphone)
+□ Test di tablet
+□ Test di laptop
+□ Klik tombol "Lihat Profil Kandidat"
+□ Klik kandidat utama (modal muncul?)
+□ Cek foto kandidat muncul
+□ Test tombol WhatsApp
+□ Cek responsive (resize browser)
+
+Jika semua ✅ OK → Website siap untuk disosialisasikan!
+
+
+═══════════════════════════════════════════════════════════════
+  📤 CARA SHARE WEBSITE
+═══════════════════════════════════════════════════════════════
+
+1. WHATSAPP
+   
+   Copy link: https://your-project.vercel.app
+   
+   Paste ke WhatsApp Group:
+   
+   "🗳️ Website Sosialisasi Pilkades 2026
+   
+   Kenali visi, misi, dan program kerja calon kepala desa:
+   👉 [LINK]
+   
+   Mari gunakan hak pilih dengan bijak! 🇮🇩"
+
+
+2. FACEBOOK / INSTAGRAM
+
+   Screenshot homepage website
+   Post dengan caption + link
+
+
+3. QR CODE (UNTUK POSTER)
+
+   • Buka: qr-code-generator.com
+   • Input URL website
+   • Download QR Code
+   • Print di poster/banner
+
+
+4. SHORT LINK (OPSIONAL)
+
+   URL terlalu panjang? Buat short link:
+   
+   • Buka: bit.ly
+   • Input URL panjang
+   • Dapat short link: bit.ly/pilkades-sukamaju
+   
+   Lebih mudah diingat dan di-share!
+
+
+═══════════════════════════════════════════════════════════════
+  🔄 CARA UPDATE WEBSITE SETELAH DEPLOY
+═══════════════════════════════════════════════════════════════
+
+Jika ada perubahan (edit konten, ganti foto, dll):
+
+CARA 1: REDEPLOY MANUAL
+
+1. Login ke vercel.com
+2. Pilih project Anda
+3. Klik "Deployments"
+4. Klik "Redeploy" → Upload folder baru
+
+CARA 2: VIA CLI (JIKA SUDAH SETUP)
+
+1. Edit file di local
+2. Buka Command Prompt di folder project
+3. Jalankan: vercel --prod
+4. Done! Auto-update
+
+
+═══════════════════════════════════════════════════════════════
+  ❓ TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════
+
+MASALAH: Foto tidak muncul setelah deploy
+
+SOLUSI:
+• Cek folder: assets/images/kandidat/ ada?
+• Cek nama file: kandidat-01.jpg (huruf kecil)
+• Cek path di HTML: assets/images/kandidat/kandidat-01.jpg
+• Redeploy
+
+─────────────────────────────────────────────────────────────
+
+MASALAH: Website lambat loading
+
+SOLUSI:
+• Compress foto (< 300KB per foto)
+• Gunakan TinyPNG.com
+• Redeploy
+
+─────────────────────────────────────────────────────────────
+
+MASALAH: Deployment failed
+
+SOLUSI:
+• Cek log error di Vercel dashboard
+• Pastikan vercel.json ada
+• Coba deploy ulang
+
+
+═══════════════════════════════════════════════════════════════
+  📞 BANTUAN LEBIH LANJUT
+═══════════════════════════════════════════════════════════════
+
+DOKUMENTASI LENGKAP:
+📄 CARA-DEPLOY-VERCEL.md (panduan detail)
+
+VIDEO TUTORIAL:
+🎥 YouTube: "How to deploy static site to Vercel"
+
+OFFICIAL DOCS:
+📚 vercel.com/docs
+
+SUPPORT:
+💬 vercel.com/support
+
+
+═══════════════════════════════════════════════════════════════
+  🎉 SELAMAT! WEBSITE ANDA SUDAH ONLINE!
+═══════════════════════════════════════════════════════════════
+
+Next Steps:
+✅ Share link ke WhatsApp Group warga
+✅ Post di social media
+✅ Buat QR Code untuk poster
+✅ Monitor visitor di Vercel Analytics
+
+Semoga Pilkades berjalan lancar dan amanah! 🗳️✨
+
+═══════════════════════════════════════════════════════════════

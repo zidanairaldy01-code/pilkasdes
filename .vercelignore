@@ -1,0 +1,23 @@
+# Documentation files (tidak perlu di-deploy)
+README.md
+README-SINGKAT.txt
+QUICK-START.md
+CARA-DEPLOY-VERCEL.md
+PANDUAN-UPLOAD-FOTO.md
+TROUBLESHOOTING-FOTO.md
+RESPONSIVE-GUIDE.md
+CHECKLIST-DEPLOY.md
+INFO-PENTING.txt
+DEPLOY-QUICK-START.txt
+RINGKASAN-LENGKAP.txt
+
+# Test files (tidak perlu di-deploy)
+test-foto.html
+TEST-RESPONSIVE.html
+BACA-DULU.html
+
+# Batch files (tidak perlu di-deploy)
+*.bat
+
+# Git files
+.gitignore
