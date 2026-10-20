@@ -1,0 +1,79 @@
+═══════════════════════════════════════════════════════════════
+  ⚠️  INFORMASI PENTING - CARA MEMBUKA WEBSITE DENGAN BENAR
+═══════════════════════════════════════════════════════════════
+
+🔴 JANGAN BUKA KANDIDAT.HTML LANGSUNG!
+
+Mengapa foto kandidat tidak muncul?
+───────────────────────────────────────────────────────────────
+Karena Anda membuka file kandidat.html LANGSUNG dari File Explorer.
+
+Ini menyebabkan:
+❌ Path foto menjadi salah
+❌ Navigasi tidak berfungsi
+❌ Browser tidak bisa menemukan file foto
+
+
+✅ CARA YANG BENAR:
+───────────────────────────────────────────────────────────────
+
+1️⃣  Double-klik: MULAI-DISINI.bat
+    (atau buka index.html dulu)
+
+2️⃣  Di halaman sosialisasi, scroll ke bawah
+
+3️⃣  Klik tombol besar: "Lihat Profil Kandidat"
+
+4️⃣  Anda akan otomatis pindah ke halaman kandidat
+    dengan path foto yang benar!
+
+
+📂 STRUKTUR WEBSITE:
+───────────────────────────────────────────────────────────────
+
+index.html (MULAI DARI SINI!)
+    ↓
+    [Tombol "Lihat Profil Kandidat"]
+    ↓
+kandidat.html (JANGAN BUKA LANGSUNG!)
+    ↓
+    [Tombol "Kembali ke Beranda"]
+    ↓
+index.html (kembali)
+
+
+🔧 TROUBLESHOOTING:
+───────────────────────────────────────────────────────────────
+
+Jika foto masih tidak muncul setelah buka dengan cara yang benar:
+
+1. Pastikan foto ada di: assets/images/kandidat/anonim.jpg
+2. Force refresh browser: Ctrl + Shift + R
+3. Buka test-foto.html untuk test
+4. Cek Console browser (F12)
+
+
+📞 FILE BANTUAN:
+───────────────────────────────────────────────────────────────
+
+✅ MULAI-DISINI.bat        → Double-klik ini untuk mulai
+✅ test-foto.html          → Test apakah foto bisa dimuat
+✅ TROUBLESHOOTING-FOTO.md → Panduan lengkap troubleshooting
+✅ QUICK-START.md          → Panduan cepat untuk pemula
+✅ README.md               → Dokumentasi lengkap website
+
+
+💡 INGAT:
+───────────────────────────────────────────────────────────────
+
+SELALU buka dari:
+  ✅ MULAI-DISINI.bat
+  ✅ index.html
+
+JANGAN PERNAH buka langsung:
+  ❌ kandidat.html (dari File Explorer)
+
+
+═══════════════════════════════════════════════════════════════
+Website Pilkades 2026 - Desa Sukamaju
+═══════════════════════════════════════════════════════════════

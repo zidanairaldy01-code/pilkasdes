@@ -1,0 +1,22 @@
+📸 CONTOH PENAMAAN FILE FOTO KANDIDAT
+
+Upload foto kandidat dengan nama file PERSIS seperti ini:
+
+✅ kandidat-01.jpg
+✅ kandidat-02.jpg
+✅ kandidat-03.jpg
+
+❌ JANGAN gunakan nama seperti:
+- Kandidat-01.jpg (K besar)
+- kandidat 01.jpg (ada spasi)
+- kandidat_01.jpg (pakai underscore)
+- foto-kandidat-01.jpg (nama berbeda)
+- kandidat-1.jpg (tanpa nol)
+
+PENTING:
+- Huruf kecil semua
+- Gunakan dash/strip (-)
+- Nomor urut 2 digit (01, 02, 03)
+- Extension .jpg atau .png
+
+Setelah upload foto, file ini bisa dihapus.

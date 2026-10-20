@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Profil Kandidat Kepala Desa 2026">
+    <title>Profil Kandidat - Pilkades 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-back">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                </svg>
+                Kembali ke Beranda
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="hero">
+        <div class="container">
+            <h1 class="hero-title">Profil Kandidat Kepala Desa</h1>
+            <p class="hero-subtitle">Kenali Visi, Misi, dan Program Kerja Setiap Calon</p>
+            <div class="hero-divider"></div>
+        </div>
+    </header>
+
+    <!-- Kandidat Section -->
+    <section class="kandidat-section">
+        <div class="container">
+            <h2 class="section-title">Kenali Para Calon</h2>
+            
+            <div class="kandidat-grid">
+                <!-- Kandidat 01 (Lawan) -->
+                <div class="kandidat-card kandidat-lawan">
+                    <div class="kandidat-badge">01</div>
+                    <div class="kandidat-image-wrapper">
+                        <img src="assets/images/kandidat/anonim.jpg" alt="Kandidat 01" class="kandidat-image grayscale">
+                    </div>
+                    <div class="kandidat-info">
+                        <h3 class="kandidat-name">Calon Nomor 01</h3>
+                        <p class="kandidat-status">Kandidat</p>
+                    </div>
+                </div>
+
+                <!-- Kandidat 02 (KANDIDAT UTAMA) -->
+                <div class="kandidat-card kandidat-utama" id="kandidatUtama">
+                    <div class="kandidat-badge featured">02</div>
+                    <div class="featured-label">✨ Klik untuk Lihat Visi & Misi Lengkap ✨</div>
+                    <div class="kandidat-image-wrapper highlight">
+                        <div class="image-overlay">
+                            <span class="overlay-text">Klik Disini</span>
+                        </div>
+                        <img src="https://via.placeholder.com/400x400/1e3a8a/ffffff?text=Foto+Kandidat" alt="Kandidat 02" class="kandidat-image">
+                    </div>
+                    <div class="kandidat-info">
+                        <h3 class="kandidat-name">Nama Kandidat Utama</h3>
+                        <p class="kandidat-status featured-text">Calon Kepala Desa Periode 2026-2032</p>
+                        <div class="kandidat-tagline">🌟 Pemimpin untuk Perubahan 🌟</div>
+                        <div class="kandidat-experience">
+                            <div class="experience-badge">
+                                <span class="badge-icon">📚</span>
+                                <span>Berpengalaman</span>
+                            </div>
+                            <div class="experience-badge">
+                                <span class="badge-icon">💼</span>
+                                <span>Profesional</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kandidat 03 (Lawan) -->
+                <div class="kandidat-card kandidat-lawan">
+                    <div class="kandidat-badge">03</div>
+                    <div class="kandidat-image-wrapper">
+                        <img src="assets/images/kandidat/anonim.jpg" alt="Kandidat 03" class="kandidat-image grayscale">
+                    </div>
+                    <div class="kandidat-info">
+                        <h3 class="kandidat-name">Calon Nomor 03</h3>
+                        <p class="kandidat-status">Kandidat</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Visi Misi -->
+    <div class="modal" id="modalVisiMisi">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="btnCloseModal">&times;</button>
+            
+            <div class="modal-header">
+                <h2>Visi & Misi</h2>
+                <p class="modal-subtitle">Kandidat Nomor 02</p>
+            </div>
+
+            <div class="modal-body">
+                <!-- Visi -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">
+                        <span class="icon">🎯</span>
+                        Visi
+                    </h3>
+                    <p class="visi-text">
+                        "Mewujudkan Desa Sukamaju yang Maju, Sejahtera, dan Berkeadilan melalui Tata Kelola Pemerintahan yang Baik, Pemberdayaan Ekonomi Masyarakat, serta Peningkatan Kualitas Infrastruktur dan Pelayanan Publik."
+                    </p>
+                </div>
+
+                <!-- Misi -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">
+                        <span class="icon">📋</span>
+                        Misi
+                    </h3>
+                    <ul class="misi-list">
+                        <li>Meningkatkan transparansi dan akuntabilitas pemerintahan desa</li>
+                        <li>Memberdayakan ekonomi lokal melalui UMKM dan koperasi desa</li>
+                        <li>Membangun dan memperbaiki infrastruktur desa secara merata</li>
+                        <li>Meningkatkan kualitas pendidikan dan kesehatan masyarakat</li>
+                        <li>Melestarikan budaya lokal dan mengembangkan potensi wisata desa</li>
+                    </ul>
+                </div>
+
+                <!-- Program Unggulan -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">
+                        <span class="icon">⭐</span>
+                        Program Unggulan
+                    </h3>
+                    <div class="program-list">
+                        <div class="program-item">
+                            <div class="program-number">1</div>
+                            <div class="program-content">
+                                <h4>Bantuan Modal Usaha Produktif</h4>
+                                <p>Program pemberian modal usaha untuk UMKM dengan bunga rendah dan pendampingan berkelanjutan</p>
+                            </div>
+                        </div>
+                        <div class="program-item">
+                            <div class="program-number">2</div>
+                            <div class="program-content">
+                                <h4>Perbaikan Jalan dan Saluran Air</h4>
+                                <p>Pengaspalan jalan desa dan pembangunan drainase untuk mencegah banjir saat musim hujan</p>
+                            </div>
+                        </div>
+                        <div class="program-item">
+                            <div class="program-number">3</div>
+                            <div class="program-content">
+                                <h4>Digitalisasi Layanan Desa</h4>
+                                <p>Pembuatan aplikasi dan website desa untuk mempermudah urusan administrasi warga secara online</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn-close-modal" id="btnCloseModalFooter">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20menyampaikan%20aspirasi%20untuk%20Desa%20Sukamaju" 
+       class="whatsapp-float" 
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Hubungi via WhatsApp">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        <span class="whatsapp-text">Sampaikan Aspirasi Warga</span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Tim Pemenangan Calon Kepala Desa Sukamaju. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

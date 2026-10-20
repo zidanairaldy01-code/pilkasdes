@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Foto Kandidat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: #f3f4f6;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1e3a8a;
+            margin-bottom: 20px;
+        }
+        .test-item {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f9fafb;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+        .test-item h3 {
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+        .test-item p {
+            color: #6b7280;
+            margin-bottom: 15px;
+        }
+        img {
+            max-width: 300px;
+            border: 3px solid #ddd;
+            border-radius: 8px;
+            display: block;
+            margin: 10px 0;
+        }
+        .status {
+            padding: 8px 16px;
+            border-radius: 6px;
+            display: inline-block;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        .success {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        .code {
+            background: #1f2937;
+            color: #10b981;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🔍 Test Foto Kandidat</h1>
+        <p style="color: #6b7280; margin-bottom: 30px;">File ini untuk mengecek apakah foto kandidat bisa dimuat dengan benar.</p>
+
+        <!-- Test 1: Path Relatif (yang digunakan di website) -->
+        <div class="test-item">
+            <h3>Test 1: Path Relatif</h3>
+            <p>Path: <code>assets/images/kandidat/anonim.jpg</code></p>
+            <div class="code">
+&lt;img src="assets/images/kandidat/anonim.jpg" alt="Kandidat 01"&gt;
+            </div>
+            <img src="assets/images/kandidat/anonim.jpg" alt="Kandidat 01" onerror="this.parentElement.querySelector('.status').className='status error'; this.parentElement.querySelector('.status').textContent='❌ Foto TIDAK ditemukan';" onload="this.parentElement.querySelector('.status').className='status success'; this.parentElement.querySelector('.status').textContent='✅ Foto berhasil dimuat!';">
+            <span class="status">⏳ Memuat foto...</span>
+        </div>
+
+        <!-- Test 2: Path Absolut -->
+        <div class="test-item">
+            <h3>Test 2: Path Absolut (Windows)</h3>
+            <p>Path: <code>C:/sosialisasi pilkades/assets/images/kandidat/anonim.jpg</code></p>
+            <div class="code">
+&lt;img src="file:///C:/sosialisasi pilkades/assets/images/kandidat/anonim.jpg"&gt;
+            </div>
+            <img src="file:///C:/sosialisasi pilkades/assets/images/kandidat/anonim.jpg" alt="Kandidat 01 Absolute" onerror="this.parentElement.querySelector('.status').className='status error'; this.parentElement.querySelector('.status').textContent='❌ Foto TIDAK ditemukan';" onload="this.parentElement.querySelector('.status').className='status success'; this.parentElement.querySelector('.status').textContent='✅ Foto berhasil dimuat!';">
+            <span class="status">⏳ Memuat foto...</span>
+        </div>
+
+        <!-- Checklist -->
+        <div class="test-item" style="border-left-color: #fbbf24;">
+            <h3>📋 Checklist Troubleshooting</h3>
+            <ul style="line-height: 2; color: #4b5563;">
+                <li>✅ File foto ada di: <code>assets/images/kandidat/anonim.jpg</code></li>
+                <li>✅ Ukuran file: <strong>23 KB</strong></li>
+                <li>✅ Path di HTML sudah benar</li>
+                <li>⚠️ Jika foto tidak muncul, coba:
+                    <ol style="margin-top: 10px;">
+                        <li>Refresh browser dengan <strong>Ctrl + F5</strong></li>
+                        <li>Buka di browser lain (Chrome/Firefox/Edge)</li>
+                        <li>Cek Console browser (F12 → Console tab)</li>
+                        <li>Pastikan file tidak corrupt (buka foto langsung)</li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Info -->
+        <div style="background: #dbeafe; padding: 20px; border-radius: 8px; margin-top: 30px;">
+            <h3 style="color: #1e40af; margin-bottom: 10px;">💡 Cara Membuka File Test Ini</h3>
+            <ol style="color: #1e3a8a; line-height: 2;">
+                <li>Tutup semua browser</li>
+                <li>Double-klik file <strong>test-foto.html</strong></li>
+                <li>Lihat apakah kedua foto muncul</li>
+                <li>Jika Test 1 ✅ = Website akan berfungsi</li>
+                <li>Jika Test 1 ❌ = Ada masalah dengan path</li>
+            </ol>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px; padding: 20px; background: #f3f4f6; border-radius: 8px;">
+            <p style="color: #6b7280; margin-bottom: 10px;">File ini dibuat untuk debugging. Bisa dihapus setelah foto berfungsi.</p>
+            <a href="kandidat.html" style="display: inline-block; background: #1e3a8a; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: 600;">← Kembali ke Halaman Kandidat</a>
+        </div>
+    </div>
+
+    <script>
+        console.log("=== DEBUG INFO ===");
+        console.log("Current URL:", window.location.href);
+        console.log("Document Base URI:", document.baseURI);
+        console.log("Test file location:", window.location.pathname);
+    </script>
+</body>
+</html>

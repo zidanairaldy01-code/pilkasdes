@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚠️ Info Penting - Cara Membuka Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            max-width: 700px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            animation: slideUp 0.5s ease;
+        }
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        .content {
+            padding: 40px 30px;
+        }
+        .warning-box {
+            background: #fef3c7;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .warning-box h3 {
+            color: #92400e;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        .warning-box p {
+            color: #78350f;
+            line-height: 1.7;
+        }
+        .success-box {
+            background: #d1fae5;
+            border-left: 5px solid #10b981;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .success-box h3 {
+            color: #065f46;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 15px 0;
+            padding: 15px;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .step-text {
+            color: #1f2937;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5);
+        }
+        .flow-diagram {
+            background: #f3f4f6;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .flow-item {
+            display: inline-block;
+            background: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            margin: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            font-weight: 600;
+            color: #1f2937;
+        }
+        .arrow {
+            display: inline-block;
+            font-size: 1.5rem;
+            color: #667eea;
+            margin: 0 10px;
+        }
+        .footer {
+            background: #f9fafb;
+            padding: 20px 30px;
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            .content {
+                padding: 30px 20px;
+            }
+            .flow-item {
+                display: block;
+                margin: 10px 0;
+            }
+            .arrow {
+                display: block;
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚠️ Informasi Penting!</h1>
+            <p>Cara membuka website Pilkades dengan benar</p>
+        </div>
+
+        <div class="content">
+            <div class="warning-box">
+                <h3>🚫 Jangan Buka kandidat.html Langsung!</h3>
+                <p>Jika Anda membuka file <strong>kandidat.html</strong> secara langsung dari File Explorer, foto kandidat dan navigasi tidak akan berfungsi dengan benar.</p>
+            </div>
+
+            <div class="success-box">
+                <h3>✅ Cara yang Benar:</h3>
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-text">Double-klik file <strong>MULAI-DISINI.bat</strong> atau buka <strong>index.html</strong></div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Scroll ke bawah di halaman sosialisasi</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Klik tombol besar <strong>"Lihat Profil Kandidat"</strong></div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-text">Anda akan otomatis pindah ke halaman kandidat dengan path yang benar!</div>
+                </div>
+            </div>
+
+            <h3 style="color: #1f2937; margin: 30px 0 15px; text-align: center;">📂 Alur Website:</h3>
+            <div class="flow-diagram">
+                <div class="flow-item">index.html<br>(Sosialisasi)</div>
+                <span class="arrow">→</span>
+                <div class="flow-item">kandidat.html<br>(Profil Kandidat)</div>
+                <span class="arrow">→</span>
+                <div class="flow-item">Kembali ke index.html</div>
+            </div>
+
+            <div style="background: #dbeafe; padding: 20px; border-radius: 12px; margin-top: 30px;">
+                <h4 style="color: #1e40af; margin-bottom: 10px;">💡 Mengapa Harus Begini?</h4>
+                <ul style="color: #1e3a8a; line-height: 2; padding-left: 20px;">
+                    <li>Path foto mengikuti struktur dari index.html</li>
+                    <li>Navigasi website berjalan dengan baik</li>
+                    <li>Animasi dan transisi smooth</li>
+                    <li>Browser dapat menemukan semua file dengan benar</li>
+                </ul>
+            </div>
+
+            <div class="btn-container">
+                <a href="index.html" class="btn-primary">🚀 Buka Website dengan Benar</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Website Pilkades 2026 - Desa Sukamaju</p>
+            <p style="margin-top: 5px; font-size: 0.85rem;">File ini bisa dihapus setelah Anda paham cara kerjanya</p>
+        </div>
+    </div>
+
+    <script>
+        console.log("═══════════════════════════════════════════");
+        console.log("⚠️  CARA MEMBUKA WEBSITE YANG BENAR:");
+        console.log("1. Buka index.html (halaman sosialisasi)");
+        console.log("2. Klik tombol 'Lihat Profil Kandidat'");
+        console.log("3. JANGAN buka kandidat.html langsung!");
+        console.log("═══════════════════════════════════════════");
+    </script>
+</body>
+</html>

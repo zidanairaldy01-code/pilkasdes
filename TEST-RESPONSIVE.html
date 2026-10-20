@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Responsive Design</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #f3f4f6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #1e3a8a;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .device-info {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .device-info h2 {
+            color: #1e3a8a;
+            margin-bottom: 16px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        .info-item {
+            background: #f3f4f6;
+            padding: 12px;
+            border-radius: 8px;
+        }
+        .info-item strong {
+            color: #1f2937;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .info-item span {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+        .viewport-visual {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .viewport-visual h3 {
+            color: #1e3a8a;
+            margin-bottom: 16px;
+        }
+        .viewport-bar {
+            height: 40px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        .viewport-label {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .breakpoints {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .breakpoints h3 {
+            color: #1e3a8a;
+            margin-bottom: 16px;
+        }
+        .breakpoint-item {
+            padding: 12px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            border-left: 4px solid #d1d5db;
+            background: #f9fafb;
+        }
+        .breakpoint-item.active {
+            border-left-color: #10b981;
+            background: #d1fae5;
+        }
+        .breakpoint-item strong {
+            color: #1f2937;
+        }
+        .breakpoint-item span {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        .test-elements {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .test-elements h3 {
+            color: #1e3a8a;
+            margin-bottom: 16px;
+        }
+        .test-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin: 8px;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        .test-button:active {
+            transform: scale(0.95);
+        }
+        .test-card {
+            background: #f3f4f6;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 16px;
+        }
+        .test-card h4 {
+            color: #1e3a8a;
+            margin-bottom: 8px;
+        }
+        .test-card p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        .link-section {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            margin-top: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .link-section h3 {
+            color: #1e3a8a;
+            margin-bottom: 16px;
+        }
+        .link-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #1e3a8a;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin: 8px;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+            transition: all 0.3s;
+        }
+        .link-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(251, 191, 36, 0.4);
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+            .test-button, .link-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📱 Test Responsive Design</h1>
+
+        <!-- Device Info -->
+        <div class="device-info">
+            <h2>Informasi Device Anda</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>Lebar Layar</strong>
+                    <span id="screenWidth">-</span>
+                </div>
+                <div class="info-item">
+                    <strong>Tinggi Layar</strong>
+                    <span id="screenHeight">-</span>
+                </div>
+                <div class="info-item">
+                    <strong>Lebar Viewport</strong>
+                    <span id="viewportWidth">-</span>
+                </div>
+                <div class="info-item">
+                    <strong>Tinggi Viewport</strong>
+                    <span id="viewportHeight">-</span>
+                </div>
+                <div class="info-item">
+                    <strong>Device Pixel Ratio</strong>
+                    <span id="devicePixelRatio">-</span>
+                </div>
+                <div class="info-item">
+                    <strong>Orientasi</strong>
+                    <span id="orientation">-</span>
+                </div>
+                <div class="info-item">
+                    <strong>Touch Support</strong>
+                    <span id="touchSupport">-</span>
+                </div>
+                <div class="info-item">
+                    <strong>User Agent</strong>
+                    <span id="userAgent">-</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Viewport Visual -->
+        <div class="viewport-visual">
+            <h3>Visual Ukuran Viewport</h3>
+            <div class="viewport-bar">
+                <div class="viewport-label" id="viewportLabel">-</div>
+            </div>
+        </div>
+
+        <!-- Breakpoints -->
+        <div class="breakpoints">
+            <h3>Breakpoint Status</h3>
+            <div class="breakpoint-item" id="bp-desktop">
+                <strong>Desktop</strong> <span>> 768px</span>
+            </div>
+            <div class="breakpoint-item" id="bp-tablet">
+                <strong>Tablet</strong> <span>481px - 768px</span>
+            </div>
+            <div class="breakpoint-item" id="bp-mobile">
+                <strong>Mobile</strong> <span>361px - 480px</span>
+            </div>
+            <div class="breakpoint-item" id="bp-mobile-small">
+                <strong>Mobile Small</strong> <span>≤ 360px</span>
+            </div>
+        </div>
+
+        <!-- Test Elements -->
+        <div class="test-elements">
+            <h3>Test Elemen Responsive</h3>
+            <p style="color: #6b7280; margin-bottom: 16px;">
+                Resize browser atau putar device Anda untuk melihat perubahan responsive.
+            </p>
+            
+            <a href="#" class="test-button">Tap Target Test</a>
+            <a href="#" class="test-button">Button Test</a>
+
+            <div class="test-card">
+                <h4>Card Test</h4>
+                <p>Card ini akan menyesuaikan padding dan font size berdasarkan ukuran layar. Coba resize browser untuk melihat perubahannya.</p>
+            </div>
+        </div>
+
+        <!-- Links -->
+        <div class="link-section">
+            <h3>🔗 Buka Halaman Website</h3>
+            <p style="color: #6b7280; margin-bottom: 20px;">
+                Klik tombol di bawah untuk test responsive di halaman asli
+            </p>
+            <a href="index.html" class="link-button">📄 Halaman Sosialisasi</a>
+            <a href="kandidat.html" class="link-button">👤 Halaman Kandidat</a>
+        </div>
+
+        <div style="text-align: center; margin-top: 24px; color: #6b7280; font-size: 0.9rem;">
+            <p>💡 Tip: Buka Chrome DevTools (F12) → Toggle Device Toolbar (Ctrl+Shift+M)</p>
+            <p>untuk simulate berbagai ukuran device</p>
+        </div>
+    </div>
+
+    <script>
+        function updateDeviceInfo() {
+            // Screen Info
+            document.getElementById('screenWidth').textContent = screen.width + 'px';
+            document.getElementById('screenHeight').textContent = screen.height + 'px';
+            
+            // Viewport Info
+            const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+            const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+            document.getElementById('viewportWidth').textContent = vw + 'px';
+            document.getElementById('viewportHeight').textContent = vh + 'px';
+            document.getElementById('viewportLabel').textContent = vw + 'px × ' + vh + 'px';
+            
+            // Device Info
+            document.getElementById('devicePixelRatio').textContent = window.devicePixelRatio || 1;
+            document.getElementById('orientation').textContent = 
+                window.innerWidth > window.innerHeight ? 'Landscape' : 'Portrait';
+            document.getElementById('touchSupport').textContent = 
+                'ontouchstart' in window ? 'Ya (Touch Device)' : 'Tidak (Desktop)';
+            
+            // User Agent (shortened)
+            const ua = navigator.userAgent;
+            let deviceType = 'Unknown';
+            if (/mobile/i.test(ua)) deviceType = 'Mobile';
+            else if (/tablet|ipad/i.test(ua)) deviceType = 'Tablet';
+            else deviceType = 'Desktop';
+            document.getElementById('userAgent').textContent = deviceType;
+
+            // Update Breakpoints
+            document.querySelectorAll('.breakpoint-item').forEach(el => el.classList.remove('active'));
+            
+            if (vw > 768) {
+                document.getElementById('bp-desktop').classList.add('active');
+            } else if (vw > 480) {
+                document.getElementById('bp-tablet').classList.add('active');
+            } else if (vw > 360) {
+                document.getElementById('bp-mobile').classList.add('active');
+            } else {
+                document.getElementById('bp-mobile-small').classList.add('active');
+            }
+        }
+
+        // Update on load and resize
+        updateDeviceInfo();
+        window.addEventListener('resize', updateDeviceInfo);
+        window.addEventListener('orientationchange', updateDeviceInfo);
+
+        // Log info to console
+        console.log('%c📱 Responsive Test Info', 'color: #1e3a8a; font-size: 16px; font-weight: bold;');
+        console.log('Viewport:', window.innerWidth + 'px × ' + window.innerHeight + 'px');
+        console.log('Screen:', screen.width + 'px × ' + screen.height + 'px');
+        console.log('Device Pixel Ratio:', window.devicePixelRatio);
+        console.log('Touch Support:', 'ontouchstart' in window);
+    </script>
+</body>
+</html>
