@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Simulasi Pemilihan</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #f3f4f6;
+        }
+        h1 {
+            color: #1e3a8a;
+            text-align: center;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .test-section h2 {
+            color: #1e3a8a;
+            margin-top: 0;
+        }
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        .checklist li {
+            padding: 12px;
+            margin: 8px 0;
+            background: #f3f4f6;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .checklist li::before {
+            content: '☐';
+            font-size: 20px;
+            color: #6b7280;
+        }
+        .info-box {
+            background: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 4px;
+        }
+        .warning-box {
+            background: #fef3c7;
+            border-left: 4px solid #fbbf24;
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 4px;
+        }
+        .success-box {
+            background: #d1fae5;
+            border-left: 4px solid #10b981;
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 4px;
+        }
+        .btn {
+            display: inline-block;
+            background: #1e3a8a;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            margin: 10px 5px;
+            transition: all 0.2s;
+        }
+        .btn:hover {
+            background: #1e40af;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: #6b7280;
+        }
+        .btn-secondary:hover {
+            background: #4b5563;
+        }
+        code {
+            background: #1f2937;
+            color: #fbbf24;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .progress-demo {
+            width: 100%;
+            height: 12px;
+            background: #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .progress-fill-demo {
+            height: 100%;
+            background: linear-gradient(90deg, #1e3a8a 0%, #fbbf24 100%);
+            width: 60%;
+            border-radius: 10px;
+            transition: width 0.4s ease;
+        }
+    </style>
+</head>
+<body>
+    <h1>🗳️ Test Simulasi Pemilihan</h1>
+    
+    <div class="info-box">
+        <strong>📋 Panduan Testing:</strong>
+        <p>Dokumen ini berisi checklist untuk menguji fitur Simulasi Pemilihan yang baru ditambahkan. Gunakan checklist di bawah untuk memastikan semua fungsi berjalan dengan baik.</p>
+    </div>
+
+    <!-- Test Section 1: Visual Check -->
+    <div class="test-section">
+        <h2>1️⃣ Visual & Layout Check</h2>
+        <ul class="checklist">
+            <li>Tombol "🗳️ Simulasi Pemilihan" terlihat di modal Visi & Misi</li>
+            <li>Tombol memiliki warna gradient gold yang menarik</li>
+            <li>Progress bar terlihat di bagian atas modal simulasi</li>
+            <li>Progress bar menampilkan persentase (0%, 20%, 40%, 60%, 80%, 100%)</li>
+            <li>Progress bar menampilkan step (Langkah X dari 5)</li>
+            <li>Semua 5 langkah simulasi memiliki ikon yang sesuai</li>
+        </ul>
+        
+        <div class="success-box">
+            <strong>✅ Progress Bar Demo:</strong>
+            <div class="progress-demo">
+                <div class="progress-fill-demo" id="demoProgress"></div>
+            </div>
+            <p style="text-align: center; margin: 0;">Langkah 3 dari 5 - 60%</p>
+        </div>
+    </div>
+
+    <!-- Test Section 2: Functionality Check -->
+    <div class="test-section">
+        <h2>2️⃣ Functionality Check</h2>
+        <ul class="checklist">
+            <li>Klik kandidat utama → Modal Visi & Misi terbuka</li>
+            <li>Klik tombol "🗳️ Simulasi Pemilihan" → Modal simulasi terbuka</li>
+            <li>Step 1: Form NIK dan Token dapat diisi</li>
+            <li>Step 1: Validasi NIK (harus 16 digit) berfungsi</li>
+            <li>Step 1: Validasi Token berfungsi</li>
+            <li>Step 2: Dapat memilih kandidat (01, 02, atau 03)</li>
+            <li>Step 2: Visual checkbox berubah saat kandidat dipilih</li>
+            <li>Step 3: Data konfirmasi (NIK, Token, Kandidat) tampil dengan benar</li>
+            <li>Step 4: Loading animation muncul (2 detik)</li>
+            <li>Step 5: Bukti voting dengan nomor transaksi & waktu muncul</li>
+            <li>Progress bar bergerak dari 0% → 100% sesuai step</li>
+            <li>Tombol "Kembali" berfungsi di step 2 dan 3</li>
+            <li>Tombol "Coba Lagi" mereset simulasi ke step 1</li>
+            <li>Tombol "Selesai" menutup modal simulasi</li>
+            <li>Tombol X (close) menutup modal simulasi</li>
+            <li>Klik overlay (luar modal) menutup modal simulasi</li>
+        </ul>
+    </div>
+
+    <!-- Test Section 3: Mobile Responsive -->
+    <div class="test-section">
+        <h2>3️⃣ Mobile Responsive Check</h2>
+        <ul class="checklist">
+            <li>Modal simulasi tampil baik di layar smartphone (360px - 480px)</li>
+            <li>Grid kandidat berubah dari 3 kolom → 1 kolom di mobile</li>
+            <li>Progress bar tetap mudah dibaca di mobile</li>
+            <li>Form input (NIK & Token) nyaman digunakan di mobile</li>
+            <li>Tombol navigasi (Kembali, Lanjut) tidak overlap di mobile</li>
+            <li>Modal dapat di-scroll dengan lancar di mobile</li>
+            <li>Ukuran font tetap terbaca dengan jelas di mobile</li>
+            <li>Touch target minimal 44x44px (tombol mudah diklik)</li>
+        </ul>
+        
+        <div class="warning-box">
+            <strong>📱 Cara Test Mobile:</strong>
+            <ol style="margin: 10px 0 0 20px; padding: 0;">
+                <li>Buka DevTools (F12)</li>
+                <li>Aktifkan Device Toolbar (Ctrl+Shift+M)</li>
+                <li>Pilih device: iPhone SE, Samsung Galaxy S8+, dll.</li>
+                <li>Test semua fungsi dalam mode mobile</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Test Section 4: Progress Bar Animation -->
+    <div class="test-section">
+        <h2>4️⃣ Progress Bar Animation Check</h2>
+        <ul class="checklist">
+            <li>Step 1 → Progress bar: 0% (awal)</li>
+            <li>Step 2 → Progress bar: 20% (pilih kandidat)</li>
+            <li>Step 3 → Progress bar: 40% (konfirmasi)</li>
+            <li>Step 4 → Progress bar: 60% (processing)</li>
+            <li>Step 5 → Progress bar: 100% (selesai)</li>
+            <li>Animasi fill progress bar smooth (transition 0.4s)</li>
+            <li>Warna gradient (biru → gold) terlihat dengan baik</li>
+        </ul>
+        
+        <div class="info-box">
+            <strong>🎯 Expected Behavior:</strong>
+            <p>Progress bar harus bergerak secara smooth dan menampilkan persentase yang tepat di setiap langkah. Tidak boleh melompat atau stuck di satu posisi.</p>
+        </div>
+    </div>
+
+    <!-- Test Section 5: Data & Validation -->
+    <div class="test-section">
+        <h2>5️⃣ Data & Validation Check</h2>
+        <ul class="checklist">
+            <li>NIK harus tepat 16 karakter (contoh: 3201234567890123)</li>
+            <li>Token minimal 3 karakter (contoh: ABC123XYZ)</li>
+            <li>Tidak bisa lanjut ke step 2 tanpa isi NIK & Token</li>
+            <li>Alert muncul jika validasi gagal</li>
+            <li>Data NIK & Token muncul di Step 3 (Konfirmasi)</li>
+            <li>Kandidat terpilih muncul di Step 3 dengan badge yang benar</li>
+            <li>Nomor transaksi unik setiap kali submit (format: VOTE-2026-XXXXXXXX)</li>
+            <li>Waktu voting sesuai waktu saat ini (format: DD MMM YYYY, HH:MM WIB)</li>
+        </ul>
+    </div>
+
+    <!-- Test Section 6: Browser Compatibility -->
+    <div class="test-section">
+        <h2>6️⃣ Browser Compatibility</h2>
+        <ul class="checklist">
+            <li>Chrome / Edge (Chromium) - Desktop & Mobile</li>
+            <li>Firefox - Desktop & Mobile</li>
+            <li>Safari - iOS & macOS</li>
+            <li>Samsung Internet</li>
+            <li>UC Browser</li>
+        </ul>
+        
+        <div class="warning-box">
+            <strong>⚠️ Catatan:</strong>
+            <p>Pastikan fitur berfungsi di browser yang umum digunakan warga, terutama browser mobile seperti Chrome Android dan Safari iOS.</p>
+        </div>
+    </div>
+
+    <!-- Test Section 7: Performance -->
+    <div class="test-section">
+        <h2>7️⃣ Performance Check</h2>
+        <ul class="checklist">
+            <li>Modal terbuka dengan smooth (tidak lag)</li>
+            <li>Transisi antar step tidak patah-patah</li>
+            <li>Progress bar animation smooth (tidak skip)</li>
+            <li>Loading step 4 tepat 2 detik (tidak lebih, tidak kurang)</li>
+            <li>Scroll modal lancar tanpa lag</li>
+            <li>Tidak ada console error di DevTools</li>
+        </ul>
+    </div>
+
+    <!-- Test Section 8: Accessibility -->
+    <div class="test-section">
+        <h2>8️⃣ Accessibility Check</h2>
+        <ul class="checklist">
+            <li>Tombol dapat di-focus dengan Tab keyboard</li>
+            <li>Modal dapat ditutup dengan tombol Escape</li>
+            <li>Label form terhubung dengan input (klik label = focus input)</li>
+            <li>Contrast warna text & background cukup (mudah dibaca)</li>
+            <li>Icon & emoji terlihat di semua device</li>
+        </ul>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="test-section">
+        <h2>🔗 Quick Actions</h2>
+        <div style="text-align: center;">
+            <a href="kandidat.html" class="btn">Buka Halaman Kandidat</a>
+            <a href="index.html" class="btn btn-secondary">Buka Halaman Utama</a>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="TEST-RESPONSIVE.html" class="btn btn-secondary">Test Responsive</a>
+            <a href="test-foto.html" class="btn btn-secondary">Test Foto</a>
+        </div>
+    </div>
+
+    <!-- Expected Flow -->
+    <div class="test-section">
+        <h2>📝 Expected User Flow</h2>
+        <div class="info-box">
+            <ol style="margin: 10px 0 0 20px; padding: 0; line-height: 1.8;">
+                <li>User membuka <code>index.html</code></li>
+                <li>User klik tombol "Lihat Profil Kandidat"</li>
+                <li>User klik kartu Kandidat 02 (Kandidat Utama)</li>
+                <li>Modal Visi & Misi terbuka</li>
+                <li>User klik tombol "🗳️ Simulasi Pemilihan"</li>
+                <li>Modal Simulasi terbuka - Progress 0%</li>
+                <li><strong>Step 1:</strong> User isi NIK (16 digit) & Token → Klik "Lanjut" → Progress 20%</li>
+                <li><strong>Step 2:</strong> User pilih kandidat → Klik "Lanjut" → Progress 40%</li>
+                <li><strong>Step 3:</strong> User cek konfirmasi → Klik "Kirim Suara" → Progress 60%</li>
+                <li><strong>Step 4:</strong> Loading 2 detik → Auto lanjut → Progress 80%</li>
+                <li><strong>Step 5:</strong> Bukti voting muncul → Progress 100%</li>
+                <li>User klik "Selesai" atau "🔄 Coba Lagi"</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="success-box" style="text-align: center; margin-top: 30px;">
+        <strong>✅ Setelah semua test selesai:</strong>
+        <p>Pastikan semua item di checklist berfungsi dengan baik. Jika ada yang error, catat dan perbaiki sebelum deploy ke Vercel.</p>
+    </div>
+
+    <script>
+        // Demo animation untuk progress bar
+        let progress = 0;
+        setInterval(() => {
+            progress += 20;
+            if (progress > 100) progress = 0;
+            document.getElementById('demoProgress').style.width = progress + '%';
+        }, 800);
+
+        // Add checkmark functionality
+        document.querySelectorAll('.checklist li').forEach(item => {
+            item.style.cursor = 'pointer';
+            item.addEventListener('click', function() {
+                if (this.style.textDecoration === 'line-through') {
+                    this.style.textDecoration = 'none';
+                    this.style.opacity = '1';
+                    this.querySelector('::before') ? null : (this.style.color = '');
+                } else {
+                    this.style.textDecoration = 'line-through';
+                    this.style.opacity = '0.6';
+                    this.style.color = '#10b981';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -160,7 +160,152 @@
             </div>
 
             <div class="modal-footer">
+                <button class="btn-simulasi-pemilihan" id="btnSimulasiPemilihan">
+                    🗳️ Simulasi Pemilihan
+                </button>
                 <button class="btn-close-modal" id="btnCloseModalFooter">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Simulasi Pemilihan -->
+    <div class="modal modal-simulasi" id="modalSimulasi">
+        <div class="modal-overlay" id="modalSimulasiOverlay"></div>
+        <div class="modal-content modal-simulasi-content">
+            <button class="modal-close" id="btnCloseSimulasi">&times;</button>
+            
+            <div class="modal-header">
+                <h2>🗳️ Simulasi Pemilihan Online</h2>
+                <p class="modal-subtitle">Latihan Voting Sebelum Hari H</p>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-info">
+                    <span class="progress-step" id="progressStep">Langkah 1 dari 5</span>
+                    <span class="progress-percent" id="progressPercent">0%</span>
+                </div>
+            </div>
+
+            <div class="modal-body modal-simulasi-body">
+                <!-- Step 1: Verifikasi NIK -->
+                <div class="simulasi-step active" id="step1">
+                    <div class="step-icon">📱</div>
+                    <h3>Langkah 1: Verifikasi Data Pemilih</h3>
+                    <p class="step-description">Masukkan NIK dan Token Voting Anda</p>
+                    <div class="form-group">
+                        <label for="nikInput">Nomor Induk Kependudukan (NIK)</label>
+                        <input type="text" id="nikInput" placeholder="Contoh: 3201234567890123" maxlength="16">
+                    </div>
+                    <div class="form-group">
+                        <label for="tokenInput">Token Voting</label>
+                        <input type="text" id="tokenInput" placeholder="Contoh: ABC123XYZ">
+                        <small class="help-text">Token akan dikirim via SMS/WhatsApp pada hari H</small>
+                    </div>
+                    <button class="btn-next" onclick="nextStep(2)">Lanjut →</button>
+                </div>
+
+                <!-- Step 2: Pilih Kandidat -->
+                <div class="simulasi-step" id="step2">
+                    <div class="step-icon">🗳️</div>
+                    <h3>Langkah 2: Pilih Kandidat</h3>
+                    <p class="step-description">Klik salah satu kandidat untuk memilih</p>
+                    <div class="kandidat-simulasi-grid">
+                        <div class="kandidat-simulasi-card" data-kandidat="01" onclick="selectKandidat(this, '01')">
+                            <div class="kandidat-badge-sim">01</div>
+                            <img src="https://via.placeholder.com/200x200/666666/ffffff?text=Calon+01" alt="Kandidat 01">
+                            <h4>Calon Nomor 01</h4>
+                            <div class="checkbox-sim"></div>
+                        </div>
+                        <div class="kandidat-simulasi-card active" data-kandidat="02" onclick="selectKandidat(this, '02')">
+                            <div class="kandidat-badge-sim featured">02</div>
+                            <img src="https://via.placeholder.com/200x200/1e3a8a/ffffff?text=Kandidat+Utama" alt="Kandidat 02">
+                            <h4>Kandidat Utama</h4>
+                            <div class="checkbox-sim checked"></div>
+                        </div>
+                        <div class="kandidat-simulasi-card" data-kandidat="03" onclick="selectKandidat(this, '03')">
+                            <div class="kandidat-badge-sim">03</div>
+                            <img src="https://via.placeholder.com/200x200/666666/ffffff?text=Calon+03" alt="Kandidat 03">
+                            <h4>Calon Nomor 03</h4>
+                            <div class="checkbox-sim"></div>
+                        </div>
+                    </div>
+                    <button class="btn-prev" onclick="prevStep(1)">← Kembali</button>
+                    <button class="btn-next" onclick="nextStep(3)">Lanjut →</button>
+                </div>
+
+                <!-- Step 3: Konfirmasi -->
+                <div class="simulasi-step" id="step3">
+                    <div class="step-icon">✅</div>
+                    <h3>Langkah 3: Konfirmasi Pilihan</h3>
+                    <p class="step-description">Periksa kembali pilihan Anda dengan teliti</p>
+                    <div class="konfirmasi-box">
+                        <div class="konfirmasi-item">
+                            <strong>NIK:</strong>
+                            <span id="confirmNIK">3201234567890123</span>
+                        </div>
+                        <div class="konfirmasi-item">
+                            <strong>Token:</strong>
+                            <span id="confirmToken">ABC123XYZ</span>
+                        </div>
+                        <div class="konfirmasi-item kandidat-terpilih">
+                            <strong>Kandidat Terpilih:</strong>
+                            <div class="kandidat-preview">
+                                <div class="preview-badge" id="previewBadge">02</div>
+                                <span id="previewNama">Kandidat Utama (Nomor 02)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="warning-box">
+                        <strong>⚠️ PERHATIAN:</strong>
+                        <p>Setelah menekan tombol "Kirim Suara", pilihan tidak dapat diubah!</p>
+                    </div>
+                    <button class="btn-prev" onclick="prevStep(2)">← Kembali</button>
+                    <button class="btn-next" onclick="nextStep(4)">Kirim Suara 📤</button>
+                </div>
+
+                <!-- Step 4: Processing -->
+                <div class="simulasi-step" id="step4">
+                    <div class="step-icon loading">⏳</div>
+                    <h3>Memproses Suara Anda...</h3>
+                    <p class="step-description">Mohon tunggu, jangan tutup halaman</p>
+                    <div class="loading-animation">
+                        <div class="spinner"></div>
+                    </div>
+                    <p class="loading-text">Mengirim ke server...</p>
+                </div>
+
+                <!-- Step 5: Berhasil -->
+                <div class="simulasi-step" id="step5">
+                    <div class="step-icon success">🎉</div>
+                    <h3>Voting Berhasil!</h3>
+                    <p class="step-description">Suara Anda telah tersimpan dengan aman</p>
+                    <div class="success-box">
+                        <div class="success-icon">✓</div>
+                        <h4>Bukti Voting</h4>
+                        <div class="bukti-item">
+                            <strong>Nomor Transaksi:</strong>
+                            <span class="transaction-id" id="transactionId">VOTE-2026-A1B2C3D4</span>
+                        </div>
+                        <div class="bukti-item">
+                            <strong>Waktu:</strong>
+                            <span id="votingTime">15 Maret 2026, 10:30 WIB</span>
+                        </div>
+                        <div class="bukti-item">
+                            <strong>Status:</strong>
+                            <span class="status-badge">✅ Tercatat</span>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <p><strong>📱 Bukti voting juga telah dikirim ke nomor HP Anda.</strong></p>
+                        <p>Simpan nomor transaksi ini sebagai bukti Anda sudah melakukan voting.</p>
+                    </div>
+                    <button class="btn-done" onclick="closeSimulasi()">Selesai</button>
+                    <button class="btn-restart" onclick="restartSimulasi()">🔄 Coba Lagi</button>
+                </div>
             </div>
         </div>
     </div>

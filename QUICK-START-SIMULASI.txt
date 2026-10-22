@@ -1,0 +1,133 @@
+═══════════════════════════════════════════════════════════
+   🗳️ QUICK START - FITUR SIMULASI PEMILIHAN
+═══════════════════════════════════════════════════════════
+
+📅 Updated: Oktober 2026
+✅ Status: READY TO TEST
+
+═══════════════════════════════════════════════════════════
+🚀 AKSES CEPAT
+═══════════════════════════════════════════════════════════
+
+1. Buka: kandidat.html
+2. Klik: Kandidat 02 (border gold)
+3. Klik: "🗳️ Simulasi Pemilihan"
+
+═══════════════════════════════════════════════════════════
+📊 5 LANGKAH SIMULASI
+═══════════════════════════════════════════════════════════
+
+Step 1: Verifikasi (0% → 20%)
+   • NIK: 3201234567890123 (16 digit)
+   • Token: ABC123XYZ (min 3 char)
+
+Step 2: Pilih Kandidat (20% → 40%)
+   • Klik kandidat 01/02/03
+   • Checkbox akan muncul ✓
+
+Step 3: Konfirmasi (40% → 60%)
+   • Cek data: NIK, Token, Kandidat
+   • Klik "Kirim Suara 📤"
+
+Step 4: Processing (60% → 80%)
+   • Loading 2 detik ⏳
+   • Auto lanjut ke Step 5
+
+Step 5: Berhasil! (80% → 100%)
+   • Nomor transaksi: VOTE-2026-XXXXXXXX
+   • Waktu: [Timestamp real-time]
+   • Klik "Selesai" atau "🔄 Coba Lagi"
+
+═══════════════════════════════════════════════════════════
+✅ TESTING CHECKLIST MINIMAL
+═══════════════════════════════════════════════════════════
+
+[ ] Progress bar bergerak 0% → 100%
+[ ] Step 1: Validasi NIK & Token
+[ ] Step 2: Pilih kandidat berfungsi
+[ ] Step 3: Data konfirmasi benar
+[ ] Step 4: Loading 2 detik auto lanjut
+[ ] Step 5: Nomor transaksi muncul
+[ ] Tombol "Kembali" berfungsi
+[ ] Tombol "Coba Lagi" reset form
+[ ] Mobile responsive (360px - 480px)
+[ ] No console errors
+
+═══════════════════════════════════════════════════════════
+📱 TEST DI MOBILE
+═══════════════════════════════════════════════════════════
+
+1. Buka DevTools: F12
+2. Toggle Device Toolbar: Ctrl + Shift + M
+3. Pilih device: iPhone SE / Galaxy S8+
+4. Test all 5 steps
+
+═══════════════════════════════════════════════════════════
+📂 FILES PENTING
+═══════════════════════════════════════════════════════════
+
+kandidat.html      → HTML structure (modal simulasi)
+style.css          → Progress bar & simulation styles
+script.js          → Logic & validation functions
+
+PANDUAN-SIMULASI.md       → Dokumentasi lengkap
+TEST-SIMULASI.html        → Testing checklist interaktif
+SUMMARY-SIMULASI.txt      → Summary lengkap
+QUICK-START-SIMULASI.txt  → File ini (quick ref)
+
+═══════════════════════════════════════════════════════════
+🐛 TROUBLESHOOTING CEPAT
+═══════════════════════════════════════════════════════════
+
+Progress bar stuck?
+   → Clear cache: Ctrl + Shift + R
+
+Modal tidak muncul?
+   → Pastikan klik kandidat 02 dulu
+   → Cek console (F12) untuk error
+
+Validasi tidak jalan?
+   → NIK HARUS tepat 16 digit
+   → Token min 3 karakter
+
+Loading stuck di Step 4?
+   → Tunggu 2 detik penuh
+   → Refresh jika lebih dari 5 detik
+
+═══════════════════════════════════════════════════════════
+🎨 CUSTOMIZATION CEPAT
+═══════════════════════════════════════════════════════════
+
+Ubah durasi loading:
+   File: script.js
+   Line: setTimeout(() => { nextStep(5); }, 2000);
+   Change: 2000 → [durasi ms]
+
+Ubah warna progress bar:
+   File: style.css
+   Class: .progress-fill
+   Color: #1e3a8a (biru) → #fbbf24 (gold)
+
+═══════════════════════════════════════════════════════════
+💡 DATA DUMMY UNTUK TEST
+═══════════════════════════════════════════════════════════
+
+NIK: 3201234567890123
+Token: ABC123XYZ
+
+═══════════════════════════════════════════════════════════
+🚀 READY TO DEPLOY?
+═══════════════════════════════════════════════════════════
+
+✅ Test local sukses
+✅ No console errors
+✅ Mobile responsive OK
+✅ All buttons berfungsi
+✅ Progress bar smooth
+
+→ Deploy ke Vercel!
+→ Baca: CARA-DEPLOY-VERCEL.md
+
+═══════════════════════════════════════════════════════════
+        ✅ SELAMAT MENGGUNAKAN FITUR SIMULASI! 🎉
+═══════════════════════════════════════════════════════════

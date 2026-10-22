@@ -9,6 +9,12 @@ const modalOverlay = document.getElementById('modalOverlay');
 const btnCloseModal = document.getElementById('btnCloseModal');
 const btnCloseModalFooter = document.getElementById('btnCloseModalFooter');
 
+// Simulasi elements
+const btnSimulasiPemilihan = document.getElementById('btnSimulasiPemilihan');
+const modalSimulasi = document.getElementById('modalSimulasi');
+const modalSimulasiOverlay = document.getElementById('modalSimulasiOverlay');
+const btnCloseSimulasi = document.getElementById('btnCloseSimulasi');
+
 // Function to open modal
 function openModal() {
     modal.classList.add('active');
@@ -21,16 +27,39 @@ function closeModal() {
     document.body.style.overflow = ''; // Restore scrolling
 }
 
+// Function to open simulasi modal
+function openSimulasiModal() {
+    modalSimulasi.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    resetSimulasi();
+    updateProgress(1);
+}
+
+// Function to close simulasi modal
+function closeSimulasi() {
+    modalSimulasi.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
 // Event Listeners
 kandidatUtama.addEventListener('click', openModal);
 btnCloseModal.addEventListener('click', closeModal);
 btnCloseModalFooter.addEventListener('click', closeModal);
 modalOverlay.addEventListener('click', closeModal);
 
+btnSimulasiPemilihan.addEventListener('click', openSimulasiModal);
+btnCloseSimulasi.addEventListener('click', closeSimulasi);
+modalSimulasiOverlay.addEventListener('click', closeSimulasi);
+
 // Close modal with Escape key
 document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape' && modal.classList.contains('active')) {
-        closeModal();
+    if (event.key === 'Escape') {
+        if (modal.classList.contains('active')) {
+            closeModal();
+        }
+        if (modalSimulasi.classList.contains('active')) {
+            closeSimulasi();
+        }
     }
 });
 
@@ -38,6 +67,156 @@ document.addEventListener('keydown', function(event) {
 document.querySelector('.modal-content').addEventListener('click', function(event) {
     event.stopPropagation();
 });
+
+if (document.querySelector('.modal-simulasi-content')) {
+    document.querySelector('.modal-simulasi-content').addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
+}
+
+// ===================================
+// SIMULASI PEMILIHAN FUNCTIONS
+// ===================================
+
+let selectedKandidat = '02'; // Default selected
+let currentStep = 1;
+
+function updateProgress(step) {
+    currentStep = step;
+    const progressFill = document.getElementById('progressFill');
+    const progressStep = document.getElementById('progressStep');
+    const progressPercent = document.getElementById('progressPercent');
+    
+    const totalSteps = 5;
+    const percent = (step / totalSteps) * 100;
+    
+    progressFill.style.width = percent + '%';
+    progressStep.textContent = `Langkah ${step} dari ${totalSteps}`;
+    progressPercent.textContent = Math.round(percent) + '%';
+}
+
+function showStep(stepNumber) {
+    // Hide all steps
+    document.querySelectorAll('.simulasi-step').forEach(step => {
+        step.classList.remove('active');
+    });
+    
+    // Show target step
+    const targetStep = document.getElementById('step' + stepNumber);
+    if (targetStep) {
+        targetStep.classList.add('active');
+    }
+    
+    updateProgress(stepNumber);
+}
+
+function nextStep(stepNumber) {
+    // Validate current step before proceeding
+    if (currentStep === 1) {
+        const nik = document.getElementById('nikInput').value;
+        const token = document.getElementById('tokenInput').value;
+        
+        if (!nik || nik.length < 16) {
+            alert('⚠️ Mohon masukkan NIK yang valid (16 digit)');
+            return;
+        }
+        
+        if (!token || token.length < 3) {
+            alert('⚠️ Mohon masukkan Token Voting');
+            return;
+        }
+        
+        // Update confirmation
+        document.getElementById('confirmNIK').textContent = nik;
+        document.getElementById('confirmToken').textContent = token;
+    }
+    
+    if (currentStep === 2) {
+        // Update preview kandidat terpilih
+        const kandidatName = selectedKandidat === '01' ? 'Calon Nomor 01' : 
+                             selectedKandidat === '02' ? 'Kandidat Utama (Nomor 02)' : 
+                             'Calon Nomor 03';
+        document.getElementById('previewNama').textContent = kandidatName;
+        document.getElementById('previewBadge').textContent = selectedKandidat;
+    }
+    
+    if (currentStep === 3 && stepNumber === 4) {
+        // Simulate processing
+        showStep(4);
+        setTimeout(() => {
+            nextStep(5);
+        }, 2000); // 2 seconds loading
+        return;
+    }
+    
+    if (stepNumber === 5) {
+        // Generate random transaction ID
+        const transactionId = 'VOTE-2026-' + Math.random().toString(36).substr(2, 8).toUpperCase();
+        document.getElementById('transactionId').textContent = transactionId;
+        
+        // Set current time
+        const now = new Date();
+        const dateStr = now.toLocaleDateString('id-ID', { 
+            day: 'numeric', 
+            month: 'long', 
+            year: 'numeric' 
+        });
+        const timeStr = now.toLocaleTimeString('id-ID', { 
+            hour: '2-digit', 
+            minute: '2-digit' 
+        });
+        document.getElementById('votingTime').textContent = `${dateStr}, ${timeStr} WIB`;
+    }
+    
+    showStep(stepNumber);
+}
+
+function prevStep(stepNumber) {
+    showStep(stepNumber);
+}
+
+function selectKandidat(element, kandidatNumber) {
+    // Remove active from all
+    document.querySelectorAll('.kandidat-simulasi-card').forEach(card => {
+        card.classList.remove('active');
+        card.querySelector('.checkbox-sim').classList.remove('checked');
+    });
+    
+    // Add active to selected
+    element.classList.add('active');
+    element.querySelector('.checkbox-sim').classList.add('checked');
+    
+    selectedKandidat = kandidatNumber;
+}
+
+function resetSimulasi() {
+    currentStep = 1;
+    selectedKandidat = '02';
+    
+    // Reset form
+    document.getElementById('nikInput').value = '';
+    document.getElementById('tokenInput').value = '';
+    
+    // Reset selection
+    document.querySelectorAll('.kandidat-simulasi-card').forEach(card => {
+        card.classList.remove('active');
+        card.querySelector('.checkbox-sim').classList.remove('checked');
+    });
+    
+    // Set default selection to kandidat 02
+    const defaultCard = document.querySelector('[data-kandidat="02"]');
+    if (defaultCard) {
+        defaultCard.classList.add('active');
+        defaultCard.querySelector('.checkbox-sim').classList.add('checked');
+    }
+    
+    // Show first step
+    showStep(1);
+}
+
+function restartSimulasi() {
+    resetSimulasi();
+}
 
 // ===================================
 // SMOOTH SCROLL FOR MOBILE

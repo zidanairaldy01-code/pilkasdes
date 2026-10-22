@@ -26,6 +26,19 @@ Website sosialisasi dan kampanye digital untuk Pemilihan Kepala Desa (Pilkades) 
   - 3 program unggulan
 - ✅ Floating WhatsApp button
 
+### **🗳️ Fitur Simulasi Pemilihan (NEW!)** ⭐
+- ✅ **5 Langkah Interaktif**: Verifikasi → Pilih → Konfirmasi → Processing → Berhasil
+- ✅ **Progress Bar Real-time**: 0% → 100% dengan animasi smooth
+- ✅ **Step Counter**: "Langkah X dari 5" 
+- ✅ **Validasi Form**: NIK (16 digit) & Token Voting
+- ✅ **Loading Animation**: 2 detik simulasi pengiriman
+- ✅ **Bukti Voting**: Nomor transaksi unique + timestamp
+- ✅ **Mobile Optimized**: Touch-friendly, responsive grid
+- ✅ **Visual Feedback**: Setiap aksi memberikan respon visual
+
+📖 **Panduan lengkap**: `PANDUAN-SIMULASI.md`  
+🧪 **Testing checklist**: `TEST-SIMULASI.html`
+
 ## 🗳️ Sistem Voting Online
 
 Website ini dirancang untuk **sistem pemungutan suara online** dengan fitur:
